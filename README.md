@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Amazing GitHub Template - Sane defaults for your next project!</h1>
+  <h1>Swiss Knife Chatbot</h1>
   <br />
   <br />
 </div>
@@ -8,13 +8,12 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
+  - [How does it work](#how-does-it-work)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-    - [Manual setup](#manual-setup)
-    - [Deploying to AWS](#deploying-to-aws)
-    - [Environment variables](#environment-variables)
+- [Features](#features)
+- [Usage](#usage)
+- [Functions](#functions)
+- [Screenshots](#screenshots)
 - [License](#license)
 
 </details>
@@ -27,96 +26,123 @@
 <tr>
 <td>
 
-Open Source Software is not about the code in the first place but the communications and community. People love good documentation and obvious workflows. If your software solves some problem, but nobody can figure out how to use it or, for example, how to create an effective bug report, there's something very bad going on. Did you hear about Readme Driven Development? Check out the awesome [article written by GitHub co-founder Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
+This project is an interactive LLM chatbot developed using Python and Streamlit. The chatbot provides various utility functions such as converting time between time zones, sending emails, retrieving your IP address, getting maps of locations, fetching coffee images, and sharing random Chuck Norris facts.
 
-There are many great README or issues templates available on GitHub, however, you have to find them yourself and combine different templates yourself. In addition, if you want extensive docs like CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md or even advanced GitHub features like a pull request template, additional labels, code scanning, and automatic issue/PR closing and locking you have to do much more work. Your time should be focused on creating something **amazing**. You shouldn't be doing the same tasks over and over like creating your GitHub project template from scratch. Follow the **don’t repeat yourself** principle. Use a template **and go create something amazing**!
+It also has capability of drawining interactive maps.
+
+The application utilizes APIs to retrieve data and respond interactively. It's designed with user engagement and functionality in mind, and it offers a dynamic interface where users can input commands and receive responses in real-time.
+
+It was built as a demonstration of how AI chatbots can be integrated with APIs to perform real-world tasks efficiently. 
 
 </td>
 </tr>
 </table>
 
+### How does it work
+
+This chatbot processes user input and connects to various APIs to fulfill specific tasks. Here's a step-by-step explanation of how it operates:
+
+1. **User Input**: The chatbot takes user inputs via a Streamlit web interface. It interprets commands like "Convert time", "Send email", "Get my IP", etc.
+
+2. **API Integration**: Depending on the command, the application calls the relevant API:
+   - **Time Conversion**: Converts time zones using a time API.
+   - **Email**: Sends emails via a configured SMTP service.
+   - **IP Retrieval**: Fetches the user's IP using a public IP API.
+   - **Map Retrieval**: Displays maps using a mapping API (e.g., Google Maps API).
+   - **Coffee Image**: Fetches a random coffee image from a coffee-related API.
+   - **Chuck Norris Fact**: Retrieves a random Chuck Norris fact from an API.
+
+3. **Response Handling**: The chatbot processes the API responses and displays the information back to the user on the Streamlit interface. Errors are handled gracefully, displaying messages to the user if an issue occurs.
+
+4. **Completion**: The application runs as a continuous Streamlit app, always ready to accept new commands.
+
+5. **Images**: Chatbot allows rendering images from the Coffee Image API.
+
+6. **Maps**: You can even render maps with some sample points.
+
 ### Built With
 
-- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
-- [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
-- [GitHub Actions](https://github.com/features/actions)
-- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- Python
+- Streamlit
+- APIs (for various functions such as time conversion, IP retrieval, and more)
+- SMTP (for email functionality)
+- Logging modules for error tracking and debugging
+- ChatGPT 4o 
 
-## Getting Started
+## Features
 
-### Prerequisites
-
-1. The easiest way to install Cookiecutter is by running:
-
-    ```sh
-    pip install --user cookiecutter
-    ```
+<ul>
+  <li>Interactive chatbot interface built with Streamlit.</li>
+  <li>Handles time conversions between different time zones.</li>
+  <li>Sends emails directly through the app.</li>
+  <li>Retrieves your IP address and displays it.</li>
+  <li>Displays maps of specified locations.</li>
+  <li>Fetches random coffee images to brighten your day.</li>
+  <li>Provides random Chuck Norris facts for entertainment.</li>
+  <li>Graceful error handling and informative logs for troubleshooting.</li>
+</ul>
 
 ### Usage
 
-#### Manual setup
+#### Setup
 
-Please follow these steps for manual setup:
-1. Set-up the Discord bot on the Discord Developer Portal and add it to your server.
-2. Download this GitHub repository.
-3. Create a virtual environment.
-
-    ```
-    python3 -m venv <myenvname>
+1. Have Python installed along with Streamlit.
+2. Clone the repository.
+3. Install the required packages:
+    ```shell
+    pip install -r requirements.txt
     ```
 
-4. Activate virtual environment.
+#### Running the App
 
+1. Open a terminal and navigate to the project directory.
+2. Run the Streamlit app:
+    ```shell
+    streamlit run app.py
     ```
-    cd venv
-    Scripts\Activate.ps1
-    ```
-    Or different Activate script, if you are not working from Visual Code.
+3. The chatbot interface will open in your browser.
 
-5. Install packages from requirements.txt
+## Functions
 
-    ```
-    pip install -r /path/to/requirements.txt
-    ```
+These are the custom functions that can be actived in the chat, by writing a text in the "text to activate it" column.
 
-#### Deploying to AWS
+| Function Description                          | Text to Activate It          |
+|-----------------------------------------------|------------------------------|
+| Convert time between different time zones     | Convert time 2024 10 18 10:13 PM LA time to Europe/Vilnius               |
+| Send an email                                 | Send an email to "test@gmail.com" with a subject "Alice" and body "Bob"                |
+| Retrieve and display your IP address          | Get my ip                |
+| Display a map of a specified location         | Get a map with coordinates 54.687157 and 25.279652                  |
+| Fetch a random coffee image                   | Get a random coffee image          |
+| Provide a random Chuck Norris fact            | Tell me a Chuck Norris fact |
 
-1. Create a AWS RDS instance to host the PostgreSQL database.
-2. Make sure the program works, run at least once to check if the discord bot is running.
-3. In the ```.env``` file, change the ```CURRENT_ENVIRONMENT_NAME``` variable to use ```PROD``` .
-4. Run Docker command from the terminal to build an image:
-    ```
-    docker build -t questions-answer-matcher-container .
-    ```
-5. Run AWS CLI command to push the Docker Image:
-    ```
-    aws lightsail push-container-image --service-name question-answer-matcher-service --label questions-answer-matcher-container --image questions-answer-matcher-container
-    ```
-6. Change the ```containers.json``` in the app directory to use the latest image
-    ```
-    question-answer-matcher-service.questions-answer-matcher-prodX.X
-    ```
-7. Create an AWS deployment like this:
-    ```
-    aws lightsail create-container-service-deployment --service-name question-answer-matcher-service --containers file://containers.json
-    ```
-8. Check AWS Web UI for any errors.
+## Screenshots
 
+<img src="docs/images/bare-chatbot.JPG" width="600" height="300"><br>
+Chatbot interface
 
-#### Environment variables
+<img src="docs/images/convert time.JPG" width="300" height="300"><br>
+Converting the time from one timezone to another.
 
-in the .env file, replace these environment variables with your own values.
+<img src="docs/images/get a coffee image.JPG" width="600" height="300"><br>
+Fetching a coffee image.
 
-| Name                       | Default value      | Description                                                                 |
-| -------------------------- | ------------------ | --------------------------------------------------------------------------- |
-| PROJECT_NAME               | My Amazing Project | Your project name                                                           |
-| REPO_SLUG                  | my-amazing-project | Repo slug must match the GitHub repo URL slug part                          |
-| GITHUB_USERNAME            | dec0dOS            | Your GitHub username **without @**                                          |
-| FULL_NAME                  | Alexey Potapov     | Your full name                                                              |
-| OPEN_SOURCE_LICENSE        | MIT license        | Full OSS license name                                                       |
+<img src="docs/images/get a map.JPG" width="300" height="300"><br>
+Fetching a map with a custom coordinates.
+
+<img src="docs/images/get my ip.JPG" width="300" height="300"><br>
+Geting my IP.
+
+<img src="docs/images/sending email.JPG" width="300" height="300"><br>
+Sending an email.
+
+<img src="docs/images/tell me a fact.JPG" width="300" height="100"><br>
+Fetching a random coffee image.
+
+[![Video demo](https://img.youtube.com/vi/d3z1Ugrlk98/0.jpg)](https://youtu.be/d3z1Ugrlk98)<br>
+Watch the video demo.
 
 ## License
 
-This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
+This project is licensed under the **MIT license**. You are free to edit and distribute this template as you wish.
 
 See [LICENSE](LICENSE) for more information.
