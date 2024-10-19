@@ -120,22 +120,22 @@ These are the custom functions that can be actived in the chat, by writing a tex
 <img src="docs/images/bare-chatbot.JPG" width="600" height="300"><br>
 Chatbot interface
 
-<img src="docs/images/convert time.JPG" width="300" height="300"><br>
+<img src="docs/images/convert-time.JPG" width="300" height="300"><br>
 Converting the time from one timezone to another.
 
-<img src="docs/images/get a coffee image.JPG" width="600" height="300"><br>
+<img src="docs/images/get-a-coffee-image.jpg" width="600" height="300"><br>
 Fetching a coffee image.
 
-<img src="docs/images/get a map.JPG" width="300" height="300"><br>
+<img src="docs/images/get-a-map.JPG" width="300" height="300"><br>
 Fetching a map with a custom coordinates.
 
-<img src="docs/images/get my ip.JPG" width="300" height="300"><br>
+<img src="docs/images/get-my-ip.jpg" width="300" height="300"><br>
 Geting my IP.
 
-<img src="docs/images/sending email.JPG" width="300" height="300"><br>
+<img src="docs/images/sending-email.jpg" width="300" height="300"><br>
 Sending an email.
 
-<img src="docs/images/tell me a fact.JPG" width="300" height="100"><br>
+<img src="docs/images/tell-me-a-fact.JPG" width="300" height="100"><br>
 Fetching a random coffee image.
 
 [![Video demo](https://img.youtube.com/vi/d3z1Ugrlk98/0.jpg)](https://youtu.be/d3z1Ugrlk98)<br>
