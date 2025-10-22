@@ -15,8 +15,12 @@ with st.sidebar:
 st.title("💬 Chatbot")
 st.caption("🚀 A Streamlit chatbot powered by OpenAI")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Hi there! I'm your AI assistant. I'm programmed to help you with your questions and tasks. You can ask me questions and give me commands like: whats my ip address, get a random Chuck Norris fact, send an email address, convert time or draw a random map."}]
-
+    st.session_state["messages"] = [
+        {"role": "assistant", "content": "Hi there! I'm your AI assistant. I'm programmed to help you with your questions and tasks. You can ask me questions and give me commands like: whats my ip address, get a random Chuck Norris fact, send an email address, convert time or draw a random map."},
+        {"role": "assistant", "content": "Before writing your first message, please add your OpenAI API key on the left sidebar to continue."},
+        {"role": "assistant", "content": "You can also add your email address and password to send an email."},
+        {"role": "assistant", "content": "The procedure for sending email differs from client to client. For example, in Gmail, you need to create an app password."},
+    ]
 
 for msg in st.session_state.messages:  
     # Do not print function call data into chat.  
